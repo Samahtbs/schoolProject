@@ -88,6 +88,9 @@ class AuthController extends Controller
                 'token' => Str::random(60)
             ]);
 
+            return redirect("teacher")->withSuccess('Great! You have Successfully loggedin');
+
+            /*
             if ($request->type == 1) {
                 //teacher
                 return redirect("teacher")->withSuccess('Great! You have Successfully loggedin');
@@ -95,6 +98,7 @@ class AuthController extends Controller
                 //student
                 return redirect("student")->withSuccess('Great! You have Successfully loggedin');
             }
+            */
         }
     }
 
