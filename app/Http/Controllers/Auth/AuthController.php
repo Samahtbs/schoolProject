@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
+use App\Models\studentclass;
+
 class AuthController extends Controller
 {
     public function index()
@@ -45,11 +47,11 @@ class AuthController extends Controller
             if ($user->type == 1) {
                 //teacher
                 return redirect()->intended('teacher')
-                    ->withSuccess('You have Successfully loggedin');
+                    ->with('You have Successfully loggedin');
             } else if ($user->type == 2) {
                 //student
-                return redirect()->intended('student')
-                    ->withSuccess('You have Successfully loggedin');
+
+                return studentclass::all(); //redirect()->intended('student')->withSuccess('You have Successfully loggedin');
             } else {
                 //admin
                 return redirect()->intended('dashboard')
@@ -58,6 +60,14 @@ class AuthController extends Controller
         }
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
+
+    //*********************************************
+
+
+
+    //*********************************************
+
+
 
     //*********************************************
 
