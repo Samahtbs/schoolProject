@@ -1,6 +1,5 @@
 @extends('layout')
   
-@if (session('success'))
 @section('content')
 
 <div class="container">
@@ -20,14 +19,14 @@
                           </tr>
                         </thead>
                         <tbody>
-                          
+                          @foreach ($list as $li) 
                           <tr>
-                            <th scope="row">{{"ddd"}}</th>
-                            <td>{{"ddd"}}</td>
-                            <td>{{"ddd"}}</td>
-                            <td>{{"ddd"}}</td>
+                            <th scope="row">{{$li['name']}}</th>
+                            <td>{{$li['First']}}</td>
+                            <td>{{$li['Mid']}}</td>
+                            <td>{{$li['Final']}}</td>
                           </tr>
-                         
+                          @endforeach
                         </tbody>
                       </table>
                 </div>
@@ -36,4 +35,3 @@
     </div>
 </div>
 @endsection
-@endif

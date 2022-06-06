@@ -14,8 +14,8 @@ class CreateStudentclassesTable extends Migration
     public function up()
     {
         Schema::create('studentclasses', function (Blueprint $table) {
-            $table->integer('classid');
-            $table->integer('studentid');
+            $table->integer('classid')->references('id')->on('class_teachers');
+            $table->integer('studentid')->references('id')->on('users');;
             $table->double('First')->nullable();
             $table->double('Mid')->nullable();
             $table->double('Final')->nullable();

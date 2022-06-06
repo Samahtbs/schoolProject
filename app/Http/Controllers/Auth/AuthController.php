@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 use App\Models\studentclass;
+use App\Models\classTeacher;
 
 class AuthController extends Controller
 {
@@ -50,8 +51,15 @@ class AuthController extends Controller
                     ->with('You have Successfully loggedin');
             } else if ($user->type == 2) {
                 //student
+                $list = studentclass::where('studentid', $user->id)->get();
 
-                return studentclass::all(); //redirect()->intended('student')->withSuccess('You have Successfully loggedin');
+                foreach ($list as $lii) {
+                    $lii['name'] = classTeacher::find($lii['classid'])['ClassName'];
+                }
+
+                return view('student', ['list' => $list/*,'names'=>$names*/]);
+                //return redirect()->intended('student')->with($list);
+                //return redirect()->intended('student')->withSuccess('You have Successfully loggedin');
             } else {
                 //admin
                 return redirect()->intended('dashboard')

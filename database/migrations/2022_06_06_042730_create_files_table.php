@@ -15,10 +15,11 @@ class CreateFilesTable extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->integer('classid');
+            $table->integer('classid')->references('id')->on('class_teachers');
             $table->string('FileName');
             $table->string('FileDecoded');
             $table->timestamps();
+            //$table->foreign('classid')->references('id')->on('class_teachers');
         });
     }
 
