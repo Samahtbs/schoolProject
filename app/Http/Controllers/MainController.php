@@ -33,6 +33,6 @@ class MainController extends Controller
     public function returnteacher($id)
     {
         $teacher = User::find($id);
-        return view('teaher', ['tech' => $teacher]);
+        return view('teacherProfile', ['tech' => $teacher]);
     }
 }
