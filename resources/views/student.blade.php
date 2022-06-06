@@ -21,7 +21,7 @@
                         <tbody>
                           @foreach ($list as $li) 
                           <tr>
-                            <th scope="row">{{$li['name']}}</th>
+                            <th scope="row"><a href="class/{{$li['classid']}}"> {{$li['name']}}</a></th>
                             <td>{{$li['First']}}</td>
                             <td>{{$li['Mid']}}</td>
                             <td>{{$li['Final']}}</td>
