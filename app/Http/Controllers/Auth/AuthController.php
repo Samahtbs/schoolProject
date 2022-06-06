@@ -47,8 +47,8 @@ class AuthController extends Controller
             //$user->save();
             if ($user->type == 1) {
                 //teacher
-                return redirect()->intended('teacher')
-                    ->with('You have Successfully loggedin');
+                $list = classTeacher::where('teacherId', $user->id)->get();
+                return view('teacher', ['list' => $list]);
             } else if ($user->type == 2) {
                 //student
                 $list = studentclass::where('studentid', $user->id)->get();
@@ -68,14 +68,6 @@ class AuthController extends Controller
         }
         return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
     }
-
-    //*********************************************
-
-
-
-    //*********************************************
-
-
 
     //*********************************************
 

@@ -17,8 +17,9 @@
                 @foreach($file as $f)
                 <div class="card-body">
                     <h6>File name: <b>{{$f['FileName']}}</b></h6>
-                    <h6>File : <b>{{$f['FileDecoded']}}</b></h6>
-                    <h6>File uploaded time : <b>{{$f['created_at']}}</b></a></h6>
+                    <!--<h6>File : <b>{{$f['FileDecoded']}}</b></h6>-->
+                    
+                    <h6>Uploaded time : <b>{{$f['created_at']}}</b></a></h6>
                 </div>
                 @endforeach
 

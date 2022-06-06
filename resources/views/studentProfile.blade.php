@@ -6,12 +6,12 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Teacher Profile Page') }}</div>
+                <div class="card-header">{{ __('Student Profile Page') }}</div>
   
                 <div class="card-body">
-                    <h6>Teacher Name : <b>{{$tech['name']}}</b></h6>
-                    <h6>Teacher Phone : <b>{{$tech['phoneNumber']}}</b></h6>
-                    <h6>Teacher Email: <b>{{$tech['email']}}</b></h6>
+                    <h6>Student Name : <b>{{$stud['name']}}</b></h6>
+                    <h6>Student Phone : <b>{{$stud['phoneNumber']}}</b></h6>
+                    <h6>Student Email: <b>{{$stud['email']}}</b></h6>
                 </div>
             </div>
         </div>
