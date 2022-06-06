@@ -10,14 +10,20 @@ class MainController extends Controller
 {
     public function returnclass($id)
     {
-        $cs = classTeacher::find($id);
+        $class = classTeacher::find($id);
 
-        $teacher = User::find($cs['teacherId']);
+        $teacher = User::find($class['teacherId']);
 
-        $cs['tname'] = $teacher['name'];
-        $cs['tphone'] = $teacher['phoneNumber'];
-        $cs['temail'] = $teacher['email'];
+        $class['tname'] = $teacher['name'];
+        $class['tphone'] = $teacher['phoneNumber'];
+        $class['temail'] = $teacher['email'];
 
-        return view('classS', ['class' => $cs]);
+        return view('classS', ['class' => $class]);
+    }
+
+    public function returnteacher($id)
+    {
+        $teacher = User::find($id);
+        return view('teaher', ['tech' => $teacher]);
     }
 }

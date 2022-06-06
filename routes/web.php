@@ -13,3 +13,4 @@ Route::get('student', [AuthController::class, 'student']);
 Route::get('teacher', [AuthController::class, 'teacher']);
 Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Route::get('/class/{id}', [MainController::class, 'returnclass']);
+Route::get('/class/teacher/{id}', [MainController::class, 'returnteacher']);
