@@ -22,9 +22,15 @@
                       @foreach($students as $std)
                       <tr>
                         <th scope="row"><a href="student/{{$std['studentid']}}"> {{$std['name']}}</a></th>
-                        <td>{{$std['First']}}</td>
-                        <td>{{$std['Mid']}}</td>
-                        <td>{{$std['Final']}}</td>
+                        <td>
+                          <a href="" class="update" data-name="first" data-type="text" data-pk="{{ $std['First'] }}" data-title="Enter name">{{ $std['First'] }}</a>
+                        </td>
+                        <td>
+                          <a href="" class="update" data-name="mid" data-type="text" data-pk="{{$std['Mid'] }}" data-title="Enter email">{{ $std['Mid'] }}</a>
+                        </td>
+                        <td>
+                          <a href="" class="update" data-name="final" data-type="text" data-pk="{{ $std['Final'] }}" data-title="Enter email">{{ $std['Final'] }}</a>
+                        </td>
                       </tr>
                       @endforeach
                     </tbody>

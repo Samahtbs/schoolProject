@@ -8,13 +8,9 @@
                 <div class="card-header">{{ __('Admin Panel') }}</div>
   
                 <div class="card-body">
-                    @if (session('success'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('success') }}
-                        </div>
-                    @endif
-  
-                    You are Logged In
+                    <a href="/get/students">Students</a>
+                    <a href="/get/teahers">Teachers</a>
+                    <a href="/get/classes">Clasess</a>
                 </div>
             </div>
         </div>

@@ -104,4 +104,22 @@ class MainController extends Controller
 
         return back()->with('success', 'Your files has been send successfully');
     }
+
+    public function students()
+    {
+        $students = User::where('type', '2')->get();
+        return view('students', ['students' => $students]);
+    }
+
+    public function teachers()
+    {
+        $teachers = User::where('type', '1')->get();
+        return view('teachers', ['teachers' => $teachers]);
+    }
+
+    public function classes()
+    {
+        $clasess = classTeacher::all();
+        return view('classes', ['classes' => $clasess]);
+    }
 }

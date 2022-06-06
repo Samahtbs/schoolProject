@@ -60,9 +60,9 @@ class AuthController extends Controller
                 return view('student', ['list' => $list/*,'names'=>$names*/]);
                 //return redirect()->intended('student')->with($list);
                 //return redirect()->intended('student')->withSuccess('You have Successfully loggedin');
-            } else {
+            } else if ($user->type == 3) {
                 //admin
-                return redirect()->intended('dashboard')
+                return redirect()->intended('AdminPanel')
                     ->withSuccess('You have Successfully loggedin');
             }
         }
@@ -114,10 +114,10 @@ class AuthController extends Controller
 
     //*********************************************
 
-    public function dashboard()
+    public function AdminPanel()
     {
         if (Auth::check()) {
-            return view('dashboard');
+            return view('AdminPanel');
         }
 
         return redirect("login")->withSuccess('Opps! You do not have access');
