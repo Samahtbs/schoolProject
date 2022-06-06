@@ -16,7 +16,7 @@ class MainController extends Controller
 
         $cs['tname'] = $teacher['name'];
         $cs['tphone'] = $teacher['phoneNumber'];
-        $cs['temail'] = $teacher['nameemail'];
+        $cs['temail'] = $teacher['email'];
 
         return view('classS', ['class' => $cs]);
     }
